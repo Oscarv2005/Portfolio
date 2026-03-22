@@ -9,17 +9,26 @@ nav.classList.toggle("active");
 });
 }
 
-const observer = new IntersectionObserver(function(entries) {
-entries.forEach(function(entry) {
-if (entry.isIntersecting) {
+const observer = new IntersectionObserver(function(entries){
+
+entries.forEach(function(entry){
+
+if(entry.isIntersecting){
 entry.target.classList.add("reveal");
 }
+
 });
-}, { threshold: 0.15 });
+
+}, {threshold:0.15});
+
 
 const elements = document.querySelectorAll(
 ".project-card, .cert-card, .skill-item, .edu-card"
 );
+
+elements.forEach(function(el){
+observer.observe(el);
+});
 
  entry.target.classList.add("reveal")
   
