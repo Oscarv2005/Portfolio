@@ -33,6 +33,7 @@ const form = document.getElementById("contactForm");
 
 if (form) {
 form.addEventListener("submit", function (e) {
+
 e.preventDefault();
 
 const btn = form.querySelector("button");
@@ -53,8 +54,9 @@ alert("Failed to send message");
 console.log(error);
 if (btn) btn.innerText = "Send Message";
 });
-}
 
 });
+
+}
 
 });
