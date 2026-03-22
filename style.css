@@ -34,9 +34,38 @@ body {
     border-bottom: 1px solid var(--border-color);;
     z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+
+.menu-toggle{
+    display:none;
+    font-size:1.8rem;
+    cursor:pointer;
+    color:white;
+}
+
+@media (max-width:992px){
+
+.nav-links.active{
+    display:flex;
+}
+
+.menu-toggle{
+    display:block;
+}
+}
+
 .logo { font-size: 1.3rem; font-weight: 800; }
 .logo span { color: var(--accent-primary); }
-.nav-links { display: flex; list-style: none; align-items: center; }
+.nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#020617;
+    flex-direction:column;
+    align-items:center;
+    display:none;
+    padding:20px 0;
+}
 .nav-links li { margin-left: 2rem; }
 .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--accent-primary); }
