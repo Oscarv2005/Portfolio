@@ -368,6 +368,15 @@ body {
     margin-bottom: 10px;
     border-left: 10px solid var(--accent-primary);
     border-right: 10px solid var(--accent-primary);
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.edu-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .edu-header{
@@ -381,6 +390,9 @@ body {
     color:#ccc;
     font-weight:500;
 }
+
+.edu-card:nth-child(2) { transition-delay: 0.2s; }
+.edu-card:nth-child(3) { transition-delay: 0.4s; }
 
 /* Contact */
 .contact-section { background: #020617; color: white; padding: 100px 0; }
