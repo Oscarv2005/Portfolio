@@ -21,7 +21,7 @@ document.querySelectorAll(
 
 // EMAILJS START
 (function(){
-emailjs.init("YOUR_PUBLIC_KEY");
+emailjs.init("26uNHLamLEkAAw8XG");
 })();
 
 const form = document.getElementById("contactForm")
@@ -32,7 +32,7 @@ e.preventDefault()
 const btn = form.querySelector("button")
 btn.innerText="Sending..."
 
-emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",form)
+emailjs.send("service_bcf3ya5","template_je6ty87")
 .then(()=>{
 alert("Message sent successfully!")
 btn.innerText="Send Message"
