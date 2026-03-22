@@ -3,12 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
 const toggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav-links");
 
+/* Navbar toggle */
 if (toggle && nav) {
 toggle.addEventListener("click", function () {
 nav.classList.toggle("active");
 });
 }
 
+/* Close menu when clicking link */
+const navLinks = document.querySelectorAll(".nav-links a");
+
+if (navLinks.length > 0 && nav) {
+navLinks.forEach(link => {
+link.addEventListener("click", () => {
+nav.classList.remove("active");
+});
+});
+}
+
+/* Scroll animation */
 const observer = new IntersectionObserver(function(entries) {
 entries.forEach(function(entry) {
 if (entry.isIntersecting) {
@@ -21,10 +34,9 @@ const elements = document.querySelectorAll(
 ".project-card, .cert-card, .skill-item, .edu-card"
 );
 
-for (let i = 0; i < elements.length; i++) {
-observer.observe(elements[i]);
-}
+elements.forEach(el => observer.observe(el));
 
+/* EmailJS */
 if (typeof emailjs !== "undefined") {
 emailjs.init("26uNHLamLEkAAw8XG");
 }
