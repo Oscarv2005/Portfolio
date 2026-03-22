@@ -26,54 +26,94 @@ body {
 .gray-bg { background-color: var(--bg-alt) }
 .section-title { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
 
-/* Navbar */
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 8%;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(2,6,23,0.9);
+border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:1000;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:800;
+}
+
+.logo span{
+color:#3b82f6;
+}
+
+/* Desktop Menu */
 .nav-links{
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-    background:#020617;
-    flex-direction:column;
-    align-items:center;
-    display:none;
-    padding:20px 0;
+display:flex;
+list-style:none;
+gap:30px;
+transition: all 0.3s ease;    
 }
 
-/* When menu is clicked */
-.nav-links.active{
-    display:flex;
+.nav-links a{
+text-decoration:none;
+color:#94a3b8;
+font-size:0.9rem;
+font-weight:600;
+transition:0.3s;
 }
 
+.nav-links a:hover{
+color:#3b82f6;
+}
+
+/* Contact Button */
+.nav-cta{
+background:white;
+color:black !important;
+padding:8px 18px;
+border-radius:6px;
+}
+
+/* Mobile Menu Icon */
 .menu-toggle{
-    display:none;
-    font-size:1.8rem;
-    cursor:pointer;
-    color:white;
+display:none;
+font-size:1.8rem;
+cursor:pointer;
+color:white;
 }
 
+/* MOBILE RESPONSIVE */
 @media (max-width:992px){
 
 .menu-toggle{
-    display:block;
+display:block;
 }
 
-}
-
-
-.logo { font-size: 1.3rem; font-weight: 800; }
-.logo span { color: var(--accent-primary); }
 .nav-links{
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-    background:#020617;
-    flex-direction:column;
-    align-items:center;
-    display:none;
-    padding:20px 0;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#020617;
+flex-direction:column;
+align-items:center;
+display:none;
+padding:20px 0;
+gap:20px;
 }
-.nav-links li { margin-left: 2rem; }
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+margin:10px 0;
+}
+
+}
 .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--accent-primary); }
 .nav-cta { background: var(--text-dark); color: rgb(19, 7, 7) !important; padding: 8px 20px; border-radius: 6px; }
