@@ -1,4 +1,3 @@
-// MENU TOGGLE
 const toggle = document.querySelector(".menu-toggle")
 const nav = document.querySelector(".nav-links")
 
@@ -8,7 +7,6 @@ nav.classList.toggle("active")
 })
 }
 
-// SCROLL REVEAL
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 if (entry.isIntersecting) {
@@ -17,13 +15,14 @@ entry.target.classList.add("reveal")
 })
 }, { threshold: 0.15 })
 
-document.querySelectorAll(
-".project-card,.certificate-card,.skill-item,.edu-card"
-).forEach(el => observer.observe(el))
+const elements = document.querySelectorAll(
+".project-card, .cert-card, .skill-item, .edu-card"
+)
 
-// EMAILJS START
+elements.forEach(el => observer.observe(el))
+
 (function () {
-emailjs.init("26uNHLamLEkAAw8XG"); // Your Public Key
+emailjs.init("26uNHLamLEkAAw8XG") // Your Public Key
 })();
 
 const form = document.getElementById("contactForm")
@@ -35,9 +34,9 @@ const btn = form.querySelector("button")
 btn.innerText = "Sending..."
 
 emailjs.sendForm(
-"service_bcf3ya5",     // Service ID
-"template_je6ty87",    // Template ID
-this                   // Form
+"service_bcf3ya5",     
+"template_je6ty87",    
+this                   
 )
 .then(function () {
 alert("Message sent successfully!")
