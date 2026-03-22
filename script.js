@@ -21,6 +21,8 @@ const elements = document.querySelectorAll(
 ".project-card, .cert-card, .skill-item, .edu-card"
 );
 
+ entry.target.classList.add("reveal")
+  
 for (let i = 0; i < elements.length; i++) {
 observer.observe(elements[i]);
 }
