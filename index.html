@@ -223,15 +223,15 @@
                 <form class="contact-form" id="contactForm">
                     <div class="input-group">
                         <label>Name</label>
-                        <input type="text" placeholder="Your name" required>
+                        <input type="text" name="name" placeholder="Your name" required>
                     </div>
                     <div class="input-group">
                         <label>Email</label>
-                        <input type="email" placeholder="your.email@example.com" required>
+                        <input type="email" name="email" placeholder="your.email@example.com" required>
                     </div>
                     <div class="input-group">
                         <label>Message</label>
-                        <textarea placeholder="Your message..." rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
                     </div>
                     <button type="submit" class="send-btn">Send Message</button>
                 </form>
@@ -254,6 +254,7 @@
             </div>
         </div>
     </section>
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
