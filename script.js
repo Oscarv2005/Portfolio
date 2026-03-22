@@ -56,7 +56,6 @@ if (btn) btn.innerText = "Send Message";
 });
 
 });
-
 }
 
 });
