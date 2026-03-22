@@ -9,23 +9,22 @@ nav.classList.toggle("active");
 });
 }
 
-const observer = new IntersectionObserver(function(entries){
-
-entries.forEach(function(entry){
-
-if(entry.isIntersecting){
-entry.target.classList.add("reveal");
-}
-
-});
-
-}, {threshold:0.15});
-
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("reveal");
+        }
+    });
+}, { threshold: 0.15 });
 
 const elements = document.querySelectorAll(
 ".project-card, .cert-card, .skill-item, .edu-card"
 );
 
+for (let i = 0; i < elements.length; i++) {
+    observer.observe(elements[i]);
+}
+ 
 elements.forEach(function(el){
 observer.observe(el);
 });
