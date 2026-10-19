@@ -1,5 +1,7 @@
+
 import "./index.css";
-import lpu from "./images/LPU.png"; // exact filename and case as in src/images
+import lpu from "./images/LPU.png";
+import sr from "./images/SR.png";
 
 function Edu() {
   const education = [
@@ -13,7 +15,7 @@ function Edu() {
       institute: "S.R. Public School",
       degree: "Intermediate",
       year: "2018 – 2022",
-      logo: "/src/images/SR.png",
+      logo: sr,
     },
   ];
 
@@ -22,14 +24,18 @@ function Edu() {
       <div className="block-head">
         <h2>git log education</h2>
       </div>
+
       <div className="educate">
         {education.map((item) => (
           <div className="ed" key={item.institute}>
             <img
               src={item.logo}
-              alt=""
-              onError={(e) => (e.currentTarget.style.visibility = "hidden")}
+              alt={`${item.institute} logo`}
+              onError={(e) => {
+                e.currentTarget.style.visibility = "hidden";
+              }}
             />
+
             <div>
               <h3>{item.institute}</h3>
               <h4>{item.degree}</h4>
